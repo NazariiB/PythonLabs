@@ -4,17 +4,17 @@ class Accounting:
 
 
 class Product(Accounting):
-    def __init__(self, name):
+    def __init__(self, product_id):
         super().__init__()
-        self.name = name
-        
+        self.id = product_id
+
 
 class Customer(Product):
-    def __init__(self, name):
-        super().__init__("")
+    def __init__(self, name, product_id):
+        super().__init__(product_id)
         self.name = name
 
 
 accounting = Accounting()
-cola = Product("Cola")
-ivan = Customer("Ivan")
+cola = Product(105)
+ivan = Customer("Ivan", 105)
