@@ -2,19 +2,31 @@ class Accounting:
     def __init__(self):
         self.products = []
 
+    def __str__(self):
+        return f"Accounting: {self.products}"
+
 
 class Product(Accounting):
-    def __init__(self, name):
+    def __init__(self, product_id):
         super().__init__()
-        self.name = name
-C:\Users\nazik\PycharmProjects\pythonProject1\Lab9.py
+        self.id = product_id
+
+    def __str__(self):
+        return f"Product id: {self.id}"
+
 
 class Customer(Product):
-    def __init__(self, name):
-        super().__init__("")
+    def __init__(self, name, product_id):
+        super().__init__(product_id)
         self.name = name
+
+    def __str__(self):
+        return f"Customer name: {self.name}"
 
 
 accounting = Accounting()
-cola = Product("Cola")
-ivan = Customer("Ivan")
+print(accounting)
+cola = Product(105)
+print(cola)
+ivan = Customer("Ivan", 105)
+print(ivan)
